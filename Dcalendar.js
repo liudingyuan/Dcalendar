@@ -1,6 +1,7 @@
 var Dcalendar = (function () {
 	var Calendar = function (config={}) {
 		this.el = config.el || document.querySelector('.dcalendar');
+        this.currentDate = [];
 	};
     
     
@@ -42,6 +43,12 @@ var Dcalendar = (function () {
     	let blank       = '';
     	let dayHTML     = '';
 
+        const currDate = {
+            yearAndMon: `${year}.${month}`,
+            day: day
+        };
+        this.currentDate.push(currDate);
+
     	for (let i = 0;i < firstDayWeek;i++) {blank += `<td></td>`}
 
         for (let i = 0;i < dayCounts;i++) {
@@ -59,7 +66,11 @@ var Dcalendar = (function () {
 
         this.el.querySelector('.dcalendar-time').innerHTML = `${year}.${month > 9 ? month : '0' + month}`;
         this.el.querySelector('.dcalendar-day').innerHTML = dayHTML;
-        this.selectDay(day).classList.add('active');
+
+        if (currDate.yearAndMon === this.currentDate[0].yearAndMon) {
+            this.selectDay(this.currentDate[0].day).classList.add('active');
+        }
+        
         this.markDay(days);
     }
 
