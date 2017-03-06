@@ -1,0 +1,29 @@
+{
+  "name": "Dcalendar",
+  "version": "1.0.0",
+  "description": "A simple calendar",
+  "main": "Dcalendar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liudingyuan/Dcalendar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liudingyuan/Dcalendar/issues"
+  },
+  "homepage": "https://github.com/liudingyuan/Dcalendar#readme",
+  "devDependencies": {
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.3.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.2.0",
+    "css-loader": "^0.26.2",
+    "webpack": "^2.2.1"
+  }
+}
